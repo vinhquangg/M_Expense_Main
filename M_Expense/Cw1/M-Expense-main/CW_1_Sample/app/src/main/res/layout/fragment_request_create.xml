@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.request.RequestCreateFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/main">
+        </ImageView>
+
+        <Spinner
+            android:id="@+id/fmRequestCreateType"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="25dp"
+            android:contentDescription="@string/label_type"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/fmRequestCreateLinearLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/fmRequestCreateType"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/fmRequestCreateType"
+            app:layout_constraintTop_toBottomOf="@+id/fmRequestCreateType">
+
+            <EditText
+                android:id="@+id/fmRequestCreateDate"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="@string/label_date"
+                android:inputType="date"
+                android:textSize="15sp"
+                android:autofillHints=""
+                android:textColorHint="@color/black"/>
+
+            <EditText
+                android:id="@+id/fmRequestCreateTime"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="@string/label_time"
+                android:inputType="time"
+                android:textSize="15sp"
+                android:autofillHints=""
+                android:textColorHint="@color/black"/>
+        </LinearLayout>
+
+
+        <EditText
+            android:id="@+id/fmRequestCreateContent"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="76dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="@string/label_content"
+            android:inputType="textMultiLine"
+            android:textSize="15sp"
+            android:textColorHint="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/fmRequestCreateLinearLayout"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/fmRequestCreateLinearLayout"
+            app:layout_constraintTop_toBottomOf="@+id/fmRequestCreateLinearLayout" />
+
+        <EditText
+            android:id="@+id/fmRequestCreateAmount"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="12dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="Amount"
+            android:inputType="textMultiLine"
+            android:textSize="15sp"
+            android:textColorHint="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/fmRequestCreateLinearLayout"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/fmRequestCreateLinearLayout"
+            app:layout_constraintTop_toBottomOf="@+id/fmRequestCreateLinearLayout" />
+
+        <Button
+            android:id="@+id/fmRequestCreateButtonCancel"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="28dp"
+            android:text="@string/label_cancel"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/fmRequestCreateContent"
+            app:layout_constraintTop_toBottomOf="@+id/fmRequestCreateContent" />
+
+        <Button
+            android:id="@+id/fmRequestCreateButtonAdd"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="25dp"
+            android:text="@string/label_add_request"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/fmRequestCreateButtonCancel"
+            app:layout_constraintEnd_toEndOf="@+id/fmRequestCreateContent"
+            app:layout_constraintStart_toEndOf="@+id/fmRequestCreateButtonCancel"
+            app:layout_constraintTop_toTopOf="@+id/fmRequestCreateButtonCancel" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

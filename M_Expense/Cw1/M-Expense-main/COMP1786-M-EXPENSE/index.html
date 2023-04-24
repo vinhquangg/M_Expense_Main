@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <meta name="color-scheme" content="light dark">
+
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="css/index.css">
+
+    <title>M Expense</title>
+</head>
+
+<body>
+    <!-- https://www.flaticon.com/ -->
+
+    <!-- PAGE "HOME" -->
+    <div data-role="page" id="page-home">
+        <div data-role="panel" data-display="overlay" id="panel">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <img src="img/Logo.png" alt="Logo" width="75%">
+                <h1 class="h1">M Expense</h1>
+            </div>
+
+            <ul data-role="listview">
+                <li data-icon="false">
+                    <a href="#page-home" data-transition="none" class="active">Home</a>
+                </li>
+
+                <li data-icon="false">
+                    <a href="#page-create" data-transition="none">New Trip</a>
+                </li>
+
+                <li data-icon="false">
+                    <a href="#page-list" data-transition="none">Trip List</a>
+                </li>
+
+                <li data-icon="false">
+                    <a href="#page-about" data-transition="none">Information</a>
+                </li>
+            </ul>
+
+            <br><br><br>
+            <h3>Contact:</h3>
+            <p><strong>Author:</strong> Le Quang Vinh </p>
+            <p><strong>Email:</strong> <a href="mailto:vinhlqgcs190802@fpt.edu.vn">vinhlqgcs190802@fpt.edu.vn</a></p>
+        </div>
+
+        <div data-role="header" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="">
+            <div style="margin-left: 5px; margin-right: 5px;">
+                <a style="border: none; background-color: transparent;" id="panel-open"
+                    class="ui-btn ui-icon-bars ui-btn-icon-notext ui-nodisc-icon">Open Panel</a>
+            </div>
+        </div>
+
+        <div data-role="main">
+            
+            <img src="img/Travel.png" alt="" width="100%" height="100%">
+
+            <div class="shortcut">
+                <div class="shortcut-item">
+                    <a id="btn-reset" class="ui-btn ui-alt-icon ui-icon-refresh ui-nodisc-icon ui-btn-icon-top">
+                        Reset
+                    </a>
+                </div>
+
+                <div class="shortcut-item">
+                    <a id="btn-backup" class="ui-btn ui-alt-icon ui-icon-navigation ui-nodisc-icon ui-btn-icon-top">
+                        Backup
+                    </a>
+                </div>
+            </div>
+            <
+        </div>
+    </div>
+
+    <!-- PAGE "CREATE NEW ACCOUNT" -->
+    <div data-role="page" id="page-create">
+        <div data-role="panel" data-display="overlay" id="panel">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <img src="img/Logo.png" alt="Logo" width="75%">
+                <h1 class="h1">M Expense</h1>
+            </div>
+
+            <ul data-role="listview">
+                <li data-icon="false">
+                    <a href="#page-home" data-transition="none">Home</a>
+                </li>
+
+                <li data-icon="false">
+                    <a href="#page-create" data-transition="none" class="active">New Trip</a>
+                </li>
+
+                <li data-icon="false">
+                    <a href="#page-list" data-transition="none">Trip List</a>
+                </li>
+
+                <li data-icon="false">
+                    <a href="#page-about" data-transition="none">About</a>
+                </li>
+            </ul>
+
+            <br><br><br>
+            <h3>Contact:</h3>
+            <p><strong>Author:</strong> Le Quang Vinh </p>
+            <p><strong>Email:</strong> <a href="mailto:vinhlqgcs190802@fpt.edu.vn"> vinhlqgcs190802@fpt.edu.vn </a></p>
+        </div>
+
+        <div data-role="header" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="">
+            <div style="margin-left: 5px; margin-right: 5px;">
+                <a style="border: none; background-color: transparent;" id="panel-open"
+                    class="ui-btn ui-icon-bars ui-btn-icon-notext ui-nodisc-icon">Open Panel</a>
+            </div>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <!-- Registration Form -->
+            <form id="frm-register">
+                <label class="medium-text">Trip Name</label>
+                <input type="text" id="name" data-clear-btn="true" placeholder="Please fill in your trip information..." required>
+
+                <label class="medium-text">Destination </label>
+                <input type="text" placeholder="Please fill in your destination information ..." id="destination"
+                    data-clear-btn="true" required>
+
+                <label class="medium-text">Date</label>
+                <input type="date" id="date" required>
+
+                <label class="medium-text">Description </label>
+                <input type="text" placeholder="Please fill in your description information..." id="description" data-clear-btn="true">
+                
+
+                <label class="medium-text">Required Risk Assessment</label>
+                <select id="risk" data-role="slider" data-mini="true">
+                    <option value="No" selected>No</option>
+                    <option value="Yes">Yes</option>
+                </select>
+
+                <button type="submit" class="#00FFFF">CREATE TRIP</button>
+            </form>
+
+            <!-- Confirm Registration -->
+            <form data-role="popup" id="frm-confirm" class="ui-content" data-overlay-theme="b">
+                <table style="text-align: left;">
+                    <tr>
+                        <th>Trip Name</th>
+                        <td id="name"></td>
+                    </tr>
+
+                    <tr>
+                        <th>Destination </th>
+                        <td id="destination"></td>
+                    </tr>
+
+                    <tr>
+                        <th>Date </th>
+                        <td id="date"></td>
+                    </tr>
+
+                    <tr>
+                        <th>Description </th>
+                        <td id="description"></td>
+                    </tr>
+
+                    <tr>
+                        <th>Required Risk Assessment </th>
+                        <td id="risk"></td>
+                    </tr>
+                </table>
+
+                <div class="ui-grid-a">
+                    <div class="ui-block-a" style="padding: 5px;">
+                        <button type="button" id="edit">Cancel</button>
+                    </div>
+
+                    <div class="ui-block-b" style="padding: 5px;">
+                        <button type="submit" class="green">Confirm</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- PAGE "TRIP LIST" -->
+    <div data-role="page" id="page-list">
+        <div data-role="panel" data-display="overlay" id="panel">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <img src="img/Logo.png" alt="Logo" width="75%">
+                <h1>M Expense</h1>
+            </div>
+            <!-- <h1 class="h1">M Expense</h1> -->
+            <ul data-role="listview">
+                <li data-icon="false">
+                    <a href="#page-home" data-transition="none">Home</a>
+                </li>
+
+                <li data-icon="false">
+                    <a href="#page-create" data-transition="none">New Trip</a>
+                </li>
+
+                <li data-icon="false">
+                    <a href="#page-list" data-transition="none" class="active">Trip List</a>
+                </li>
+
+                <li data-icon="false">
+                    <a href="#page-about" data-transition="none">Information</a>
+                </li>
+            </ul>
+
+            <br><br><br>
+            <h3>Contact:</h3>
+            <p><strong>Author:</strong> Le Quang Vinh </p>
+            <p><strong>Email:</strong> <a href="vinhlqgcs190802@fpt.edu.vn">vinhlqgcs190802@fpt.edu.vn</a></p>
+        </div>
+
+        <div data-role="header" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="">
+            <div style="margin-left: 5px; margin-right: 5px;">
+                <a style="border: none; background-color: transparent;" id="panel-open"
+                    class="ui-btn ui-icon-bars ui-btn-icon-notext ui-nodisc-icon">Open Panel</a>
+            </div>
+        </div>
+
+        <div data-role="main">
+            <table>
+                <tr>
+                    <td style="width: 100%; padding: 0px;">
+                        <input type="text" placeholder="The trip you want to find..." id="txt-filter">
+                    </td>
+
+                    <td style="padding: 0px;">
+                        <button id="btn-filter-popup"></button>
+                    </td>
+
+                    <td style="padding: 0px;">
+                        <button class="ui-btn ui-icon-refresh ui-btn-icon-notext ui-nodisc-icon"
+                            id="btn-reset"></button>
+                    </td>
+                </tr>
+            </table>
+
+            <form data-role="popup" id="frm-search" class="ui-content" style="width: 80vw;" data-overlay-theme="b">
+                <label class="medium-text">Trip Name</label>
+                <input type="text" id="name" data-clear-btn="true" placeholder="Please fill in your travel information...">
+
+                <label class="medium-text">Destination</label>
+                <input type="text" placeholder="Please fill in your destination information..." id="destination" data-clear-btn="true">
+
+                <label class="medium-text">Date</label>
+                <input type="date" id="date">
+
+                <button type="submit" class="green">Search</button>
+            </form>
+
+            <ul id="list-trip" data-role="listview" class="ui-nodisc-icon ui-alt-icon"></ul>
+        </div>
+    </div>
+
+    <!-- PAGE "TRIP DETAILS" -->
+    <div data-role="page" id="page-detail">
+        <div data-role="header" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="">
+            <div style="margin-left: 5px; margin-right: 5px;">
+                <a href="#page-list" data-transition="none"
+                    class="ui-btn ui-icon-carat-l ui-btn-icon-notext ui-nodisc-icon transparent">Back to list</a>
+
+                <a href="#option" data-rel="popup" style="float: right;" data-transition="none"
+                    class="ui-btn ui-btn-icon-notext ui-nodisc-icon btn-option">Option</a>
+            </div>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <div data-role="popup" id="option">
+                <ul data-role="listview" data-icon="false">
+                    <li>
+                        <a href="#frm-update" data-rel="popup" data-position-to="window" id="btn-update-popup">
+                            Update
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#frm-delete" data-rel="popup" data-position-to="window" id="btn-delete-popup">
+                            Delete
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <form data-role="popup" id="frm-delete" data-overlay-theme="b">
+                <div data-role="header">
+                    <h1 style="padding-top: 20px;">Delete Trip?</h1>
+                </div>
+
+                <div role="main" class="ui-content">
+                    <h3>Please consider carefully before deleting!!!</h3>
+                    <p>This operation cannot be undone.</p>
+                    <br>
+
+                    <p><em>Please fill type "<strong>confirm delete</strong>" to delete this trip.</em></p>
+                    <input type="text" id="txt-confirm">
+
+                    <div style="text-align: right;">
+                        <a class="ui-btn ui-corner-all ui-btn-inline" data-rel="back">Cancel</a>
+
+                        <button type="submit" class="ui-btn ui-corner-all ui-btn-inline ui-disabled green"
+                            id="btn-delete">
+                            Delete
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <form id="frm-update" data-role="popup" class="ui-content" data-overlay-theme="b">
+                <label class="medium-text">Trip Name</label>
+                <input type="text" id="name" data-clear-btn="true" placeholder="Please fill your trip name information..." required>
+
+                <fieldset class="ui-grid-a" style="overflow: visible;">
+                    <div class="ui-block-a" style="padding-right: 5px;">
+                        <label class="medium-text">Destination</label>
+                        <input type="text" placeholder="Please fill your destination information..." id="destination"
+                            data-clear-btn="true" required>
+                    </div>
+
+                    <div class="ui-block-b" style="padding-left: 5px;">
+                        <label class="medium-text">Date</label>
+                        <input type="date" id="date" required>
+                    </div>
+                </fieldset>
+
+                <label class="medium-text">Description</label>
+                <input type="text" placeholder="Please fill your description information..." id="description" data-clear-btn="true">
+
+                <label class="medium-text">Required Risk Assessment</label>
+                <select id="risk" data-role="slider" data-mini="true">
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select>
+
+                <div class="ui-grid-a">
+                    <div class="ui-block-a" style="padding: 5px;">
+                        <button type="button" id="cancel">Cancel</button>
+                    </div>
+
+                    <div class="ui-block-b" style="padding: 5px;">
+                        <button type="submit" class="green">Update</button>
+                    </div>
+                </div>
+            </form>
+
+            <div id="detail">
+                <h1 id="name"></h1>
+
+                <table style="text-align: left;">
+                    <tr>
+                        <th><img src="img/icon-destination.png" height="20px"></th>
+                        <td id="destination"></td>
+                    </tr>
+
+                    <tr>
+                        <th><img src="img/icon-date.png" height="20px"></th>
+                        <td id="date"></td>
+                    </tr>
+
+                    <tr>
+                        <th><img src="img/icon-description.png" height="20px"></th>
+                        <td id="description"></td>
+                    </tr>
+
+                    <tr>
+                        <th><img src="img/icon-risk.png" height="20px"></th>
+                        <td id="risk"></td>
+                    </tr>
+                </table>
+            </div>
+
+            <table style="margin-top: 20px; text-align: left; margin-bottom: 5px;">
+                <tr style="width: 100%;">
+                    <td>
+                        <button style="font-size: 10px;" id="btn-toggle-expense"
+                            class="ui-btn ui-alt-icon ui-icon-plus ui-corner-all ui-btn-icon-notext ui-nodisc-icon ui-btn-inline ui-mini transparent">
+                            Toggle Expense
+                        </button>
+                    </td>
+
+                    <th style="font-size: 15px; width: 100%;">Show M Expenses</th>
+
+                    <td>
+                        <a href="#frm-add-expense" data-rel="popup" data-position-to="window" id="btn-add-expense-popup"
+                            class="ui-btn ui-mini green ui-corner-all">
+                            Add
+                        </a>
+                    </td>
+                </tr>
+            </table>
+
+            <div id="expense" style="display: none;">
+                <div id="list"></div>
+            </div>
+        </div>
+
+        <form id="frm-add-expense" data-role="popup" class="ui-content" data-overlay-theme="b">
+            <fieldset class="ui-grid-a" style="overflow: visible;">
+                <div class="ui-block-a" style="padding-right: 5px;">
+                    <label class="medium-text">Amount</label>
+                    <input type="number" id="amount" data-clear-btn="true" placeholder="Please fill your amount trip..." required>
+                </div>
+
+                <div class="ui-block-b" style="padding-left: 5px;">
+                    <label class="medium-text">M Expense Type</label>
+                    <select id="type" data-mini="true" required>
+                        <option value="Travel">Trip</option>
+                        <option value="Food">Spending</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <fieldset class="ui-grid-a" style="overflow: visible;">
+                <div class="ui-block-a" style="padding-right: 5px;">
+                    <label class="medium-text">Date</label>
+                    <input type="date" id="date" required>
+                </div>
+
+                <div class="ui-block-b" style="padding-left: 5px;">
+                    <label class="medium-text">Time</label>
+                    <input type="time" id="time" required>
+                </div>
+            </fieldset>
+
+            <label class="medium-text">Comment Trip</label>
+            <input type="text" placeholder="Please fill your comment..." id="comment" data-clear-btn="true">
+
+            <div class="ui-grid-a">
+                <div class="ui-block-a" style="padding: 5px;">
+                    <button type="button" id="cancel">Cancel</button>
+                </div>
+
+                <div class="ui-block-b" style="padding: 5px;">
+                    <button type="submit" class="green">Add</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- PAGE "ABOUT" -->
+    <div data-role="page" id="page-about">
+        <div data-role="panel" data-display="overlay" id="panel">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <img src="img/Logo.png" alt="Logo" width="100%">
+                <h1>M Expense</h1>
+            </div>
+
+            <ul data-role="listview">
+                <li data-icon="false">
+                    <a href="#page-home" data-transition="none">Home</a>
+                </li>
+
+                <li data-icon="false">
+                    <a href="#page-create" data-transition="none">New Trip</a>
+                </li>
+
+                <li data-icon="false">
+                    <a href="#page-list" data-transition="none">Trip List</a>
+                </li>
+
+                <li data-icon="false">
+                    <a href="#page-about" data-transition="none" class="active">Information</a>
+                </li>
+            </ul>
+
+            <br><br><br>
+            <h3>Contact:</h3>
+            <p><strong>Author:</strong> Le Quang Vinh </p>
+            <p><strong>Email:</strong><a href="mailto:vinhlqgcs190802@fpt.edu.vn"> vinhlqgcs190802@fpt.edu.vn </a></p>
+        </div>
+
+        <div data-role="header" data-position="fixed" data-tap-toggle="false" data-hide-during-focus="">
+            <div style="margin-left: 5px; margin-right: 5px;">
+                <a style="border: none; background-color: transparent;" id="panel-open"
+                    class="ui-btn ui-icon-bars ui-btn-icon-notext ui-nodisc-icon">Open Panel</a>
+            </div>
+        </div>
+
+        <div data-role="main" class="ui-content" style="text-align: center;">
+            <h1 class="h1">M EXPENSE</h1>
+            <img src="img/Logo.png" alt="Logo" width="300px" height="300px" style="margin-bottom: 25px;">
+
+            <h2>Contact</h2>
+            <p style="margin-bottom: 7px;">Author</p>
+            <strong><em>Le Quang Vinh</em></strong>
+            <p style="margin-bottom: 7px; margin-top: 25px;">Email</p>
+            <strong><em><a href="vinhlqgcs190802@fpt.edu.vn"> vinhlqgcs190802@fpt.edu.vn</a></em></strong>
+            <p style="margin-bottom: 7px; margin-top: 25px;">Phone</p>
+            <strong><em><a href="tel:+84977860423">(84) 28 95 46 84</a></em></strong>
+
+            <p style="margin-top: 30px;"><em>Copyright &#169; 2022 Serco Honan. All rights reserved.</em></p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/database.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/listItemRequestDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/listItemRequestTime"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="15dp"
+        android:textSize="15sp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/listItemRequestDate"
+        app:layout_constraintStart_toEndOf="@+id/listItemRequestDate"
+        app:layout_constraintTop_toTopOf="@+id/listItemRequestDate" />
+
+
+    <TextView
+        android:id="@+id/listItemRequestType"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginEnd="25dp"
+        android:textSize="15sp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/listItemRequestTime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/listItemRequestTime" />
+
+
+    <TextView
+        android:id="@+id/listItemRequestContent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:paddingBottom="15dp"
+        android:textSize="15sp"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/listItemRequestType"
+        app:layout_constraintStart_toStartOf="@+id/listItemRequestDate"
+        app:layout_constraintTop_toBottomOf="@+id/listItemRequestDate" />
+
+    <TextView
+        android:id="@+id/listItemRequestAmount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:paddingBottom="15dp"
+        android:textSize="15sp"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/listItemRequestType"
+        app:layout_constraintStart_toStartOf="@+id/listItemRequestDate"
+        app:layout_constraintTop_toBottomOf="@+id/listItemRequestDate" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

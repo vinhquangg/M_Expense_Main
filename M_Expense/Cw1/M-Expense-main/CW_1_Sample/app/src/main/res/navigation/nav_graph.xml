@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    android:label="@string/menu_in_main_home"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/tripRegisterFragment"
+        android:name="vn.edu.greenwich.cw_1_sample.UI.trip.TripRegisterFragment"
+        android:label="Trip Create"
+        tools:layout="@layout/fragment_trip_register" />
+    <fragment
+        android:id="@+id/tripListFragment"
+        android:name="vn.edu.greenwich.cw_1_sample.UI.trip.list.TripListFragment"
+        android:label="Trip List"
+        tools:layout="@layout/fragment_trip_list" />
+    <fragment
+        android:id="@+id/tripDetailFragment"
+        android:name="vn.edu.greenwich.cw_1_sample.UI.trip.TripDetailFragment"
+        android:label="Trip Detail"
+        tools:layout="@layout/fragment_trip_detail">
+        <argument
+            android:name="Trip"
+            app:argType="vn.edu.greenwich.cw_1_sample.models.Trip" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutUsFragment"
+        android:name="vn.edu.greenwich.cw_1_sample.UI.info.AboutUsFragment"
+        android:label="About Us"
+        tools:layout="@layout/fragment_about_us" />
+    <fragment
+        android:id="@+id/tripUpdateFragment"
+        android:name="vn.edu.greenwich.cw_1_sample.UI.trip.TripUpdateFragment"
+        android:label="Trip Update"
+        tools:layout="@layout/fragment_trip_update" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="vn.edu.greenwich.cw_1_sample.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" />
+</navigation>

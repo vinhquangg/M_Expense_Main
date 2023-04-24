@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">CW_1_Sample</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="menu_in_main_home">Home</string>
+    <string name="menu_in_main_list">List</string>
+    <string name="menu_in_main_about">About</string>
+    <string name="menu_in_main_register">Create</string>
+
+    <string name="error_empty_list">Empty list.</string>
+    <string name="error_not_found">Not Found</string>
+    <string name="error_no_info">No Information</string>
+    <string name="error_blank_name">Name cannot be blank.</string>
+    <string name="error_blank_destination">Destination cannot be blank.</string>
+    <string name="error_blank_description">Description cannot be blank.</string>
+    <string name="error_blank_start_date">Starting Date cannot be blank.</string>
+
+    <string name="notification_empty_resident_list">There is no trip.</string>
+    <string name="notification_empty_request_list">There is no request.</string>
+    <string name="notification_create_success">Created successfully.</string>
+    <string name="notification_create_fail">Not created successfully.</string>
+    <string name="notification_delete_success">Deleted successfully.</string>
+    <string name="notification_delete_fail">Not deleted successfully.</string>
+    <string name="notification_update_success">Updated successfully.</string>
+    <string name="notification_update_fail">Not updated successfully.</string>
+    <string name="notification_backup_success">Backup successfully.</string>
+    <string name="notification_backup_fail">Not backup successfully.</string>
+    <string name="notification_reset_database_success">Reset database successfully.</string>
+    <string name="notification_delete_confirm">Are you sure to delete this?.</string>
+
+    <string name="label_name">Name</string>
+    <string name="label_destination">Destination</string>
+    <string name="label_description">Description</string>
+    <string name="label_start_date">Starting Date</string>
+    <string name="label_date">Date</string>
+    <string name="label_time">Time</string>
+    <string name="label_owner">Risk</string>
+    <string name="label_tenant">Not Risk</string>
+    <string name="label_type">Type</string>
+    <string name="label_add_request">Add Request</string>
+    <string name="label_register">Create Trip</string>
+    <string name="label_confirm">Confirm</string>
+    <string name="label_update">Update</string>
+    <string name="label_search">Search</string>
+    <string name="label_cancel">Cancel</string>
+    <string name="label_content">Content</string>
+    <string name="label_setting">Setting</string>
+    <string name="label_confirmation">Confirmation</string>
+    <string name="label_reset_database">Reset Database</string>
+    <string name="label_backup">Backup</string>
+    <string name="label_backup_firestore">Firestore Backup</string>
+
+    <string-array name="request_type">
+        <item>Travel</item>
+        <item>Food</item>
+        <item>Booking</item>
+        <item>Activities</item>
+        <item>Other</item>
+    </string-array>
+</resources>

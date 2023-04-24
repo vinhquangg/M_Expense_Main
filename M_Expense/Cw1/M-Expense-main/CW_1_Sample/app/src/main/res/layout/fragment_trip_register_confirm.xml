@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.trip.TripRegisterConfirmFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/fmTripRegisterConfirmNameLabel"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="100dp"
+            android:text="@string/label_name"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/fmTripRegisterConfirmName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/fmTripRegisterConfirmNameLabel"
+            app:layout_constraintTop_toTopOf="@+id/fmTripRegisterConfirmNameLabel" />
+
+        <TextView
+            android:id="@+id/fmTripRegisterConfirmStartDateLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="@string/label_start_date"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/fmTripRegisterConfirmNameLabel"
+            app:layout_constraintStart_toStartOf="@+id/fmTripRegisterConfirmNameLabel"
+            app:layout_constraintTop_toBottomOf="@+id/fmTripRegisterConfirmName" />
+
+        <TextView
+            android:id="@+id/fmTripRegisterConfirmStartDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/fmTripRegisterConfirmName"
+            app:layout_constraintStart_toStartOf="@+id/fmTripRegisterConfirmName"
+            app:layout_constraintTop_toTopOf="@+id/fmTripRegisterConfirmStartDateLabel" />
+
+        <TextView
+            android:id="@+id/fmTripRegisterConfirmOwnerLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="@string/label_type"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/fmTripRegisterConfirmStartDateLabel"
+            app:layout_constraintStart_toStartOf="@+id/fmTripRegisterConfirmStartDateLabel"
+            app:layout_constraintTop_toBottomOf="@+id/fmTripRegisterConfirmStartDate" />
+
+        <TextView
+            android:id="@+id/fmTripRegisterConfirmOwner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/fmTripRegisterConfirmStartDate"
+            app:layout_constraintStart_toStartOf="@+id/fmTripRegisterConfirmStartDate"
+            app:layout_constraintTop_toTopOf="@+id/fmTripRegisterConfirmOwnerLabel" />
+
+        <TextView
+            android:id="@+id/fmTripRegisterConfirmDestinationLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="@string/label_destination"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/fmTripRegisterConfirmOwnerLabel"
+            app:layout_constraintStart_toStartOf="@+id/fmTripRegisterConfirmOwnerLabel"
+            app:layout_constraintTop_toBottomOf="@+id/fmTripRegisterConfirmOwner" />
+
+        <TextView
+            android:id="@+id/fmTripRegisterConfirmDestination"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/fmTripRegisterConfirmOwner"
+            app:layout_constraintStart_toStartOf="@+id/fmTripRegisterConfirmOwner"
+            app:layout_constraintTop_toTopOf="@+id/fmTripRegisterConfirmDestinationLabel"
+            />
+
+        <TextView
+            android:id="@+id/fmTripRegisterConfirmDescriptionLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="@string/label_description"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/fmTripRegisterConfirmDestinationLabel"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/fmTripRegisterConfirmDestinationLabel"
+            app:layout_constraintTop_toBottomOf="@+id/fmTripRegisterConfirmDestination" />
+
+        <TextView
+            android:id="@+id/fmTripRegisterConfirmDescription"
+            android:layout_width="226dp"
+            android:layout_height="54dp"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/fmTripRegisterConfirmDestination"
+            app:layout_constraintStart_toStartOf="@+id/fmTripRegisterConfirmDestination"
+            app:layout_constraintTop_toTopOf="@+id/fmTripRegisterConfirmDescriptionLabel" />
+
+        <Button
+            android:id="@+id/fmTripRegisterConfirmButtonCancel"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="336dp"
+            android:background="@color/green"
+            android:text="@string/label_cancel"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/fmTripRegisterConfirmNameLabel"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fmTripRegisterConfirmOwner" />
+
+        <Button
+            android:id="@+id/fmTripRegisterConfirmButtonConfirm"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/green"
+            android:text="@string/label_confirm"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/fmTripRegisterConfirmButtonCancel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/fmTripRegisterConfirmButtonCancel"
+            app:layout_constraintTop_toTopOf="@+id/fmTripRegisterConfirmButtonCancel" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:background="@color/green"
+            android:padding="15dp"
+            android:text="@string/label_confirmation"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
